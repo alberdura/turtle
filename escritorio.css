@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -11,44 +11,42 @@ body {
     background-size: cover;
     overflow: hidden; 
 }
-
 .content {
     text-align: center;
-    width: 90%; 
-    height: 90%;
+    width: 100%; 
+    height: 100%;
     background: url('fondos/confeti.gif');
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
 }
-
-.tortugas1, .tortugas2 {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-img {
-    width: 45%;
-    max-width: 400px;
-    margin: 0 20px;
-}
-
-.volume-control {
+.tortugas1 {
     text-align: center;
-    padding-top: 2%;
+    align-items: center;
+    align-content: center;
+    column-count:2;
 }
-
+.tortugas2 {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    column-count:2;
+}
+.tortugas3 {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    column-count:2;
+}
+img {
+    width: 100%; 
+    max-width: 600px; 
+}
+.volume-control {
+    padding-top: 8%;
+    text-align: center;
+}
 .volume-control input[type="range"] {
-    width: 30%; 
-    max-width: 300px; 
+    width: 50%; 
+    max-width: 200px; 
 }
-
 @keyframes dance {
     0% { transform: translateX(0) rotate(0deg); }
     25% { transform: translateX(5%) rotate(15deg); }
