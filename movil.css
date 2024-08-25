@@ -11,29 +11,40 @@ body {
     background-size: cover;
     overflow: hidden; 
 }
+
 .content {
     text-align: center;
     width: 100%; 
     height: 100%;
     background: url('fondos/confeti.gif');
 }
+
 .tortugas1, .tortugas2, .tortugas3 {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
+
+.tortugas1 li, .tortugas2 li, .tortugas3 li {
+    flex: 1;
+    max-width: 50%; /* Cada imagen ocupará hasta el 50% del ancho del contenedor */
+}
+
 img {
-    width: 45%;
+    width: 100%; 
     max-width: 600px;
 }
+
 .volume-control {
     padding-top: 8%;
     text-align: center;
 }
+
 .volume-control input[type="range"] {
     width: 50%; 
     max-width: 200px; 
 }
+
 @keyframes dance {
     0% { transform: translateX(0) rotate(0deg); }
     25% { transform: translateX(5%) rotate(15deg); }
@@ -41,6 +52,7 @@ img {
     75% { transform: translateX(-5%) rotate(-15deg); }
     100% { transform: translateX(0) rotate(0deg); }
 }
+
 @keyframes dance2 {
     0% { transform: translateX(0) rotate(0deg); }
     25% { transform: translateX(5%) rotate(-15deg); }
@@ -48,15 +60,21 @@ img {
     75% { transform: translateX(-5%) rotate(15deg); }
     100% { transform: translateX(0) rotate(0deg); }
 }
+
 li {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-/* Ajustes adicionales para pantallas grandes */
+@media only screen and (max-width: 768px) {
+    .tortugas1 li, .tortugas2 li, .tortugas3 li {
+        max-width: 50%; /* Mantén dos imágenes por fila en pantallas pequeñas */
+    }
+}
+
 @media only screen and (min-width: 769px) {
-    img {
-        width: 100%;
+    .tortugas1 li, .tortugas2 li, .tortugas3 li {
+        max-width: 50%; /* Mantén el mismo comportamiento en pantallas grandes */
     }
 }
