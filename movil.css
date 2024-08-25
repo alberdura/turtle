@@ -21,18 +21,20 @@ body {
 
 .tortugas1, .tortugas2, .tortugas3 {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center; 
 }
 
 .tortugas1 li, .tortugas2 li, .tortugas3 li {
-    flex: 1;
-    max-width: 50%; /* Cada imagen ocupará hasta el 50% del ancho del contenedor */
+    flex: 1 1 50%; 
+    box-sizing: border-box;
+    padding: 5px;
 }
 
 img {
-    width: 100%; 
+    width: 100%;
     max-width: 600px;
+    display: block;
 }
 
 .volume-control {
@@ -69,12 +71,12 @@ li {
 
 @media only screen and (max-width: 768px) {
     .tortugas1 li, .tortugas2 li, .tortugas3 li {
-        max-width: 50%; /* Mantén dos imágenes por fila en pantallas pequeñas */
+        flex: 1 1 50%;
     }
 }
 
 @media only screen and (min-width: 769px) {
     .tortugas1 li, .tortugas2 li, .tortugas3 li {
-        max-width: 50%; /* Mantén el mismo comportamiento en pantallas grandes */
+        flex: 1 1 33.33%;
     }
 }
