@@ -17,27 +17,14 @@ body {
     height: 100%;
     background: url('fondos/confeti.gif');
 }
-.tortugas1 {
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    column-count:2;
-}
-.tortugas2 {
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    column-count:2;
-}
-.tortugas3 {
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    column-count:2;
+.tortugas1, .tortugas2, .tortugas3 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 img {
-    width: 100%; 
-    max-width: 600px; 
+    width: 45%;
+    max-width: 600px;
 }
 .volume-control {
     padding-top: 8%;
@@ -54,7 +41,6 @@ img {
     75% { transform: translateX(-5%) rotate(-15deg); }
     100% { transform: translateX(0) rotate(0deg); }
 }
-
 @keyframes dance2 {
     0% { transform: translateX(0) rotate(0deg); }
     25% { transform: translateX(5%) rotate(-15deg); }
@@ -66,4 +52,11 @@ li {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+/* Ajustes adicionales para pantallas grandes */
+@media only screen and (min-width: 769px) {
+    img {
+        width: 100%;
+    }
 }
