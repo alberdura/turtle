@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: url('fondos/colores_max.gif');
+    background-size: cover;
+    overflow: hidden; 
+}
+.content {
+    text-align: center;
+    width: 100%; 
+    height: 100%;
+    background: url('fondos/confeti.gif');
+}
+.tortugas1 {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    column-count:2;
+}
+.tortugas2 {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    column-count:2;
+}
+.tortugas3 {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    column-count:2;
+}
+img {
+    width: 100%; 
+    max-width: 600px; 
+}
+.volume-control {
+    padding-top: 8%;
+    text-align: center;
+}
+.volume-control input[type="range"] {
+    width: 50%; 
+    max-width: 200px; 
+}
+@keyframes dance {
+    0% { transform: translateX(0) rotate(0deg); }
+    25% { transform: translateX(5%) rotate(15deg); }
+    50% { transform: translateX(0) rotate(0deg); }
+    75% { transform: translateX(-5%) rotate(-15deg); }
+    100% { transform: translateX(0) rotate(0deg); }
+}
+
+@keyframes dance2 {
+    0% { transform: translateX(0) rotate(0deg); }
+    25% { transform: translateX(5%) rotate(-15deg); }
+    50% { transform: translateX(0) rotate(0deg); }
+    75% { transform: translateX(-5%) rotate(15deg); }
+    100% { transform: translateX(0) rotate(0deg); }
+}
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

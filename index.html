@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imgs/icon.png" type="image/x-icon">
+    <title>Tortuguillas Bailongas</title>
+
+    <link id="responsive-stylesheet" rel="stylesheet" href="movil.css">
+    <link rel="stylesheet" href="escritorio.css" media="only screen and (min-width: 1024px)">
+    <style>
+        .content {
+            display: none;
+        }
+        .start-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-image: url("fondos/fondo_interr.png");
+            background-color: black; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .start-button {
+            width: 230px;
+            height: 130px;
+            background-image: url("imgs/boton.png");
+            background-color: transparent;
+            background-size: cover;
+            background-position: center;
+            border: none;
+            cursor: pointer;
+            transition: background-image 0.13s ease;
+        }
+
+        .start-button:hover,
+        .start-button:active {
+            background-image: url("imgs/boton_apretao.png");
+        }
+
+        .start-button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="start-screen">
+        <button class="start-button" onclick="startExperience()"></button>
+    </div>
+
+    <div class="content">
+        <div class="tortugas1">
+            <li><img id="tortuga0" style="animation: dance 1s infinite;"></li>
+            <li><img id="tortuga1" style="animation: dance2 1s infinite;"></li>
+        </div>
+        <div class="tortugas2">
+            <li><img id="tortuga2" style="animation: dance 1s infinite;"></li>
+            <li><img id="tortuga3" style="animation: dance2 1s infinite;"></li>
+        </div>
+        <div class="tortugas3">
+            <li><img id="tortuga4" style="animation: dance 1s infinite;"></li>
+            <li><img id="tortuga5" style="animation: dance2 1s infinite;"></li>
+        </div>
+        <audio id="audioPlayer" loop>
+            <source src="media/rickroll.mp3" type="audio/mp3">
+            <embed src="media/rickroll.mp3" loop="">
+        </audio>
+    </div>
+
+    <script>
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function startExperience() {
+            document.querySelector('.start-screen').style.display = 'none';
+            document.querySelector('.content').style.display = 'block';
+            
+            for (let i = 0; i < 6; i++) {
+                const randomNum = getRandomInt(1, 45);
+                document.getElementById(`tortuga${i}`).src = `imgs/tortuga${randomNum}.gif`;
+            }
+            document.getElementById('audioPlayer').play();
+        }
+    </script>
+</body>
+</html>
