@@ -2,51 +2,52 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100vw;
     background: url('fondos/colores_max.gif');
     background-size: cover;
-    overflow: hidden; 
+    background-position: center;
+    overflow: hidden;
 }
+
 .content {
-    text-align: center;
-    width: 100%; 
-    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+    grid-template-rows: repeat(3, auto);   /* Tres filas automáticas */
+    width: 100%; /* Ancho del contenedor principal */
+    height: auto;
     background: url('fondos/confeti.gif');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
-.tortugas1 {
-    text-align: center;
+
+.tortugas1, .tortugas2, .tortugas3 {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    align-content: center;
-    column-count:2;
 }
-.tortugas2 {
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    column-count:2;
-}
-.tortugas3 {
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    column-count:2;
-}
+
 img {
-    width: 100%; 
-    max-width: 600px; 
+    width: 100%;
+    max-width: 300px;
+    object-fit: contain; /* Asegura que las imágenes mantengan su proporción */
+    animation: dance 2s infinite; /* Añade la animación por defecto */
 }
+
 .volume-control {
     padding-top: 8%;
     text-align: center;
 }
+
 .volume-control input[type="range"] {
     width: 50%; 
     max-width: 200px; 
 }
+
 @keyframes dance {
     0% { transform: translateX(0) rotate(0deg); }
     25% { transform: translateX(5%) rotate(15deg); }
@@ -62,6 +63,7 @@ img {
     75% { transform: translateX(-5%) rotate(15deg); }
     100% { transform: translateX(0) rotate(0deg); }
 }
+
 li {
     list-style-type: none;
     margin: 0;

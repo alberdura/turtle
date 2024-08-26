@@ -6,12 +6,10 @@
     <link rel="shortcut icon" href="imgs/icon.png" type="image/x-icon">
     <title>Tortuguillas Bailongas</title>
 
-    <link id="responsive-stylesheet" rel="stylesheet" href="movil.css">
-    <link rel="stylesheet" href="escritorio.css" media="only screen and (min-width: 1024px)">
+    <link id="responsive" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="escritorio.css" media="only screen and (min-width: 1024px)"> -->
     <style>
-        .content {
-            display: none;
-        }
+
         .start-screen {
             display: flex;
             justify-content: center;
@@ -50,7 +48,7 @@
 </head>
 <body>
     <div class="start-screen">
-        <button class="start-button" onclick="startExperience()"></button>
+        <button class="start-button" onclick="startExperience();updateStylesheet(); "></button>
     </div>
     
     <div class="content">
@@ -82,38 +80,6 @@
             <source id="song" type="audio/mp3">
         </audio>
     </div>
-
-    <script>
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-
-        let randomSong = getRandomInt(1,6);
-        document.getElementById(`song`).src = `media/song${randomSong}.mp3`;
-        document.getElementById(`songo`).src = `media/song${randomSong}.mp3`;
-
-        function startExperience() {
-            document.querySelector('.start-screen').style.display = 'none';
-            document.querySelector('.content').style.display = 'block';
-
-            let randomNums = [];
-            for (let i = 0; i < 6; i++) {
-                let randomNum;
-
-                do {
-                    randomNum = getRandomInt(1, 45);
-                } while (randomNums.includes(randomNum));
-
-                randomNums.push(randomNum);
-
-                document.getElementById(`tortuga${i}`).src = `imgs/tortuga${randomNum}.gif`;
-            }
-
-            let randomSong = getRandomInt(1, 6);
-            document.getElementById('song').src = `media/song${randomSong}.mp3`;
-            document.getElementById('audioPlayer').load();
-            document.getElementById('audioPlayer').play();
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
