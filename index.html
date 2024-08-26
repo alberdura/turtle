@@ -85,20 +85,30 @@
     </div>
 
     <script>
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-        function startExperience() {
-            document.querySelector('.start-screen').style.display = 'none';
-            document.querySelector('.content').style.display = 'block';
-            
-            for (let i = 0; i < 6; i++) {
-                const randomNum = getRandomInt(1, 45);
-                document.getElementById(`tortuga${i}`).src = `imgs/tortuga${randomNum}.gif`;
-            }
+function getUniqueRandomNumbers(count, min, max) {
+    const numbers = new Set();
+    while (numbers.size < count) {
+        const randomNum = getRandomInt(min, max);
+        numbers.add(randomNum);
+    }
+    return Array.from(numbers);
+}
+
+function startExperience() {
+    document.querySelector('.start-screen').style.display = 'none';
+    document.querySelector('.content').style.display = 'block';
+    
+    const uniqueRandomNumbers = getUniqueRandomNumbers(6, 1, 45);
+
+    for (let i = 0; i < 6; i++) {
+        document.getElementById(`tortuga${i}`).src = `imgs/tortuga${uniqueRandomNumbers[i]}.gif`;
+    }
+}
             document.getElementById('audioPlayer').play();
-        }
     </script>
 </body>
 </html>
